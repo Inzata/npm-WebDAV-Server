@@ -16,7 +16,9 @@ export class PhysicalGateway extends PhysicalFolder
         [path : string] : PhysicalResource
     }
 
-    constructor(rootPath : string, protected customName ?: string, parent ?: IResource, fsManager ?: FSManager)
+    customName ?: string
+
+    constructor(rootPath : string, customName ?: string, parent ?: IResource, fsManager ?: FSManager)
     {
         super(rootPath, parent, fsManager ? fsManager : new PhysicalGFSManager());
 

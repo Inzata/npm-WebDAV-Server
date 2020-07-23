@@ -1972,7 +1972,7 @@ export abstract class FileSystem implements ISerializableFileSystem
      * @param resourceType Type of the resource to add.
      * @param callback Returns an error if one occured.
      */
-    addSubTree(ctx : RequestContext, resourceType : ResourceType | string | Buffer, callback : SimpleCallback) : void
+    addSubTree(ctx : RequestContext, resourceType : ResourceType | string | String | Buffer, callback : SimpleCallback) : void
     /**
      * Add a sub-tree to the file system.
      * 
@@ -1992,8 +1992,8 @@ export abstract class FileSystem implements ISerializableFileSystem
      * @param resourceType Type of the resource to add.
      * @param callback Returns an error if one occured.
      */
-    addSubTree(ctx : RequestContext, rootPath : Path | string, resourceType : ResourceType | string | Buffer, callback : SimpleCallback) : void
-    addSubTree(ctx : RequestContext, _rootPath : Path | string | SubTree | ResourceType | SimpleCallback | string | Buffer, _tree : SubTree | ResourceType | SimpleCallback | string | Buffer, _callback ?: SimpleCallback) : void
+    addSubTree(ctx : RequestContext, rootPath : Path | string, resourceType : ResourceType | string | String | Buffer, callback : SimpleCallback) : void
+    addSubTree(ctx : RequestContext, _rootPath : Path | string | SubTree | ResourceType | SimpleCallback | String | Buffer, _tree : SubTree | ResourceType | SimpleCallback | string | String | Buffer, _callback ?: SimpleCallback) : void
     {
         const _rootPathIsPath = Path.isPath(_rootPath);
         const tree = _rootPathIsPath ? _tree as SubTree | ResourceType : _rootPath as SubTree | ResourceType;
